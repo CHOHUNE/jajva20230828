@@ -6,6 +6,7 @@ public class C04array {
         System.out.println("a[0] = " + a[0]);
         a = method01();
         System.out.println("a[0] = " + a[0]);
+        String b="s";
     }
 
     private static int[] method01() {
