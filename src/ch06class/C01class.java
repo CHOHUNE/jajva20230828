@@ -16,7 +16,7 @@ public class C01class {
 }
 
 class MyClass01{
-    int age=30;
+    int age;
     String name;
     String adress;
 
