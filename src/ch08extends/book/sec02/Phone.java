@@ -1,4 +1,4 @@
-package c08extends.book.sec02;
+package ch08extends.book.sec02;
 
 public class Phone {
     public String model;

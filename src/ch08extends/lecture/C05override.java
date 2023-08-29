@@ -1,4 +1,4 @@
-package c08extends.lecture;
+package ch08extends.lecture;
 
 public class C05override {
 

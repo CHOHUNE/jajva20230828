@@ -1,4 +1,4 @@
-package c08extends.book.sec04.exam01;
+package ch08extends.book.sec04.exam01;
 
 public class Computer extends Calculator {
     @Override
