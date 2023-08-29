@@ -19,5 +19,5 @@ class MySubClass031 extends MyClass03{
         // 상위 클래스의 private field는
         // 같은 클래스 내에서만 수정이 가능하다.
     }
-}
+    }
 
