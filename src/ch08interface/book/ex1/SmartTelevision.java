@@ -1,6 +1,6 @@
 package ch08interface.book.ex1;
 
-import ch08interface.book.RemoteControl;
+//import ch08interface.book.RemoteControl;
 
 public class SmartTelevision implements Searchable, RemoteControlA {
 
