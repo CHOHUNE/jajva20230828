@@ -1,4 +1,4 @@
-package ch15.collection.lecture.lecture;
+package ch15.collection.book;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -22,7 +22,7 @@ public class HashExample {
         String key = "홍길동";
         int value = map.get(key);
 
-
+        //향상 for문
         for(Map.Entry<String, Integer> entry: map.entrySet()){
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
@@ -49,15 +49,7 @@ public class HashExample {
         System.out.println();
         Set<Entry<String, Integer>> entrySet=map.entrySet();
         Iterator < Entry <String , Integer>> entryIterator=entrySet.iterator();
-        while(entryIterator.hasNext()){
-            Entry<String, Integer> entry = entryIterator.next();
-            String k =entry.getKey();
-            Integer v =entry.getValue();
-            System.out.println(k + " : " + v);
-        }
-        System.out.println();
-        map.remove("홍길동");
-        System.out.println("총 Entry 수"+ map.size());
+
 
     }}
 

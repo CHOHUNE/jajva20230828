@@ -1,36 +1,34 @@
 package ch15.collection.lecture;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
 public class C13map {
     public static void main(String[] args) {
         // map 전체 탐색
-        Map<String, String> map = new HashMap<>();
-        map.put("학생1", "흥민");
-        map.put("학생2", "강인");
-        map.put("학생3", "민재");
 
-        // 향상된 for
-        System.out.println("향상된 for로 전체탐색");
-        Set<Map.Entry<String, String>> entries = map.entrySet();
-        for (Map.Entry<String, String> entry : entries) {
-            System.out.println(entry.getKey() + ":" + entry.getValue());
+        Map <String, String> map = new HashMap<>();
+        map.put("학생1","흥궈");
+        map.put("학생2","흥궈");
+        map.put("학생2","흥민");
+
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            String k = entry.getKey();
+            String v = entry.getValue();
+            System.out.println(k + " : " + v);
         }
 
-        // keySet
-
-        System.out.println("keySet사용해서 전체탐색");
-        Set<String> keys = map.keySet();
-        for (String key : keys) {
-            System.out.println(key + ":" + map.get(key));
+        Set<String> keySet= map.keySet();
+        for(String keys :keySet){
+            System.out.println(keys + map.get(keys));
         }
+    for( Map.Entry<String,String> entry : map.entrySet()){
+        System.out.println( entry.getKey() + entry.getValue());
+    }
 
-        // forEach
-        System.out.println("forEach 메소드로 전체탐색");
-        map.forEach((key, value) -> System.out.println(key + ":" + value));
+
 
     }
 }
-
