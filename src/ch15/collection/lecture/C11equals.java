@@ -6,25 +6,20 @@ import java.util.Set;
 
 public class C11equals {
     public static void main(String[] args) {
-        Set<String> set= new HashSet<>();
-        set.add("java");
-        set.add("css");
-        System.out.println("set.size() = " + set.size());
 
-        Set<MyClass11> set2 = new HashSet<>();
-        set2.add(new MyClass11(("흥민")));
-        set2.add(new MyClass11(("흥민")));
-
-        //equals 를 name 기준으로 같게 밑에서 equals hascode 하기
+        Set<MyClass11> set = new HashSet<>();
+        set.add(new MyClass11("흥민"));
+        set.add(new MyClass11("흥민"));
     }
 }
 
 class MyClass11{
-    private String name;
+    String name;
 
-    public MyClass11(String name){
-        this.name=name;
+    public MyClass11(String name) {
+        this.name = name;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -39,3 +34,10 @@ class MyClass11{
         return Objects.hash(name);
     }
 }
+/*
+*메인 클래스에서 서브 클래스 흥민 흥궈 선언 후 equal 하게 만들기
+* set add 마이클래스 흥민 흥민
+*
+* MyClas11
+* String name
+* 생성자 name */
