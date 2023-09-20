@@ -11,4 +11,7 @@ public class C16unmodifiable {
         List<String> list2 = List.of("java","react","css");
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
