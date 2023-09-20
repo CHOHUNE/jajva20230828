@@ -1,49 +1,53 @@
 package ch18io.book;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class ex10 {
     public static void main(String[] args) {
-        String path="src/ch18io/book/ex10.java";
-        File file= new File(path);
-        String des="C:/Temp/test10copy.java";
+        String srcPath = "";
+        String desPath = "";
 
-        try(
-                InputStream is= new FileInputStream(path);
-                OutputStream os = new FileOutputStream(des);
-                BufferedInputStream is2= new BufferedInputStream(is);
-                BufferedOutputStream os2= new BufferedOutputStream(os);
+        try (Scanner scanner = new Scanner(System.in);) {
+            System.out.print("원본 파일 경로:");
+            srcPath = scanner.nextLine();
 
-        ){
-            try(is2;os){
+            System.out.print("복사 파일 경로:");
+            desPath = scanner.nextLine();
 
-                if(!file.exists()){
-                    System.out.println("파일이 존재하지 않습니다.");
-                }
-//                상위 경로가 있는지 검사하는 메서드가 필요함. isDirectory X
-//                대상 경로에 폴더명만 끊어서 확인하는 방법도 있다.
-//                .getParent()
-                if(!file.isDirectory()){
-                    file.mkdirs();
-                    System.out.println("디렉토리 생성 완료");
+            File srcFile = new File(srcPath);
+            if (srcFile.exists()) {
+                File desFile = new File(desPath);
+                File desFileDir = desFile.getParentFile();
+
+                if (!desFileDir.exists()) {
+                    desFileDir.mkdirs();
                 }
 
-                int len=0;
-                byte[] buff=new byte[10240];
-                while( (len=is.read(buff)) !=-1){
-                    os.write(buff,0,len);
-                    System.out.println("복사가 성공 되었습니다");
+                // 복사하는 일
+                InputStream is = new FileInputStream(srcFile);
+                OutputStream os = new FileOutputStream(desFile);
 
+                BufferedInputStream bis = new BufferedInputStream(is);
+                BufferedOutputStream bos = new BufferedOutputStream(os);
+
+                try (bos; bis; os; is;) {
+                    byte[] read = new byte[1024];
+                    int len = 0;
+
+                    while ((len = is.read(read)) != -1) {
+                        os.write(read, 0, len);
+                    }
+
+                    System.out.println("복사가 성공되었습니다.");
                 }
+            } else {
+                System.out.println("원본 파일이 존재하지 않습니다.");
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        catch(FileNotFoundException e){
-            e.printStackTrace();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
     }
 }
 

@@ -3,7 +3,7 @@ package ch14.thread.lecture;
 import java.awt.*;
 
 public class C02thread {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         for(int i=0; i<5 ; i++){
             toolkit.beep();

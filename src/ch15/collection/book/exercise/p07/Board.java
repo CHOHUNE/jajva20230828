@@ -9,6 +9,9 @@ public class Board {
         this.content = content;
     }
 
+    public Board(String title, String content, String s) {
+    }
+
     public String getTitle() {
         return title;
     }
