@@ -11,17 +11,13 @@ public class C33annotation {
 
     }
 }
-
-
 @interface MyAnotation33{
-
 
     /* 어노테이션에 들어갈 수있는 요소들
     parameter
     argument
     attribute
     element
-    *
     * */
 
     int number(); // 해당 요소 값을 줘야한다.

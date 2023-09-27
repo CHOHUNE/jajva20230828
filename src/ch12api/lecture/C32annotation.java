@@ -13,7 +13,7 @@ public class C32annotation {
         int value =o1.getValue();
 
         Class<? extends MyClass32> c = o1.getClass();
-        Method[] m1 = c.getDeclaredMethod("getNumber");
+        Method[] m1 = new Method[]{c.getDeclaredMethod("getNumber")};
 
 
                 Method m2= c.getDeclaredMethod("getValue");

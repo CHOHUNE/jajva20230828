@@ -2,32 +2,27 @@ package LeetCode;
 
 import java.util.Stack;
 
-public class Noname {
-    public boolean backspaceCompare(String s, String t) {
+class Solution {
+    public int[] solution(int[] arr, int[][] queries) {
 
-        Stack<Character> stackS = new Stack<>();
-        Stack<Character> stackT = new Stack<>();
+        int[] temp = new int[arr.length];
+        int tempnum=0;
+        for (int i = 0; i < queries.length; i++) {
+           int s = queries[i][0];
+           int e = queries[i][1];
+           int k = queries[i][2];
 
-        for (char c : s.toCharArray()) {
-            if (!stackS.isEmpty()) {
-                if (c == '#') {
-                    stackS.pop();
-                } else {
-                    stackS.push(c);
+            for( int j=s ; j<=e;j++){
+                if( j%k==0){
+                  tempnum=arr[j]++;
                 }
             }
+        }
 
-            for (char z : t.toCharArray()) {
-                if (!stackS.isEmpty()) {
-                    if (z == '#') {
-                        stackT.pop();
-                    }
-                } else {
-                    stackT.push(z);
-                }
-            }
+        for(int i=0; i<arr.length; i++){
+            temp[i]=arr[i];
+        }
 
-            }
-        return stackS.equals(stackT);
+        return temp;
     }
 }

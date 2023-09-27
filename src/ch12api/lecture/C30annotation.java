@@ -1,5 +1,6 @@
 package ch12api.lecture;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 
 public class C30annotation {
@@ -15,7 +16,7 @@ public String toString(){
         Method method1=c.getDeclaredMethod("toString");
        System.out.println("method1.getName() = " + method1.getName());
 
-       method1.getDeclaredAnnotations();
-
+      Annotation[]a = method1.getDeclaredAnnotations();
+        System.out.println(a.length);
     }
 }
